@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>counter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <h1>Counter</h1>
+            <P id="counter">0</P>
+            <div class="mainbox">
+            <button id="Decrease" onclick="Decrease()">Decrease</button>
+            <button id="Reset" onclick="Reset()">Reset</button>
+            <button id="Increase" onclick="increase()">Increase</button>   
+        </div>
+        </div>  
+    </div>
+    <script>
+       let countervalue = document.getElementById("counter");
+
+    function Decrease(){
+        let firstvalue=countervalue.textContent;
+       let newvalue=parseInt(firstvalue)-1;
+       countervalue.textContent=newvalue;
+       if(newvalue<0){
+        countervalue.style.color= "red";
+       }
+    }
+    function increase(){
+       let firstvalue=countervalue.textContent;
+       let newvalue=parseInt(firstvalue)+1;
+       countervalue.textContent=newvalue;
+       if(newvalue>0)
+       {
+        countervalue.style.color= "green";
+       }
+}
+function Reset(){
+    let firstvalue=countervalue.textContent;
+       let newvalue= 0;
+       countervalue.textContent=newvalue;
+       if(newvalue=0)
+       {
+        countervalue.style.color= "black";
+       }
+}
+
+
+    </script>
+</body>
+</html>
